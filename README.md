@@ -48,7 +48,7 @@ Advanced PvP plugin for Hytale with a complete statistics system, killstreaks, a
 
 ### Compilation
 ```bash
-git clone https://github.com/YOUR-USERNAME/BetterPvP-Hytale.git
+git clone https://github.com/ynsmod/BetterPvP-Hytale
 cd BetterPvP-Hytale
 ./gradlew shadowJar
 ```
@@ -119,7 +119,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 
 For any questions or issues:
 
-- Open an [Issue](https://github.com/YOUR-USERNAME/BetterPvP-Hytale/issues)
+- Open an [Issue](https://github.com/ynsmod/BetterPvP-Hytale/issues)
 - Join the Hytale Discord for help
 
 ---
