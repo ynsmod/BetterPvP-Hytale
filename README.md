@@ -1,114 +1,127 @@
-# ⚔️ BetterPvP - Plugin Hytale
+# ⚔️ BetterPvP - Hytale Plugin
 
-Plugin PvP avancé pour Hytale avec système de statistiques complet, killstreaks et classements.
+Advanced PvP plugin for Hytale with a complete statistics system, killstreaks, and leaderboards.
 
-## ✨ Fonctionnalités
+## ✨ Features
 
-- 📊 **Statistiques complètes** : Kills, Deaths, K/D Ratio
-- 🔥 **Killstreaks** avec annonces automatiques
-- 🏆 **Classements TOP 10** (Kills, K/D, Killstreaks)
-- 💾 **Sauvegarde automatique** toutes les 5 minutes
-- 🎨 **Interface colorée** et professionnelle
-- 📈 **Statistiques globales** du serveur
+- 📊 **Complete Statistics**: Kills, Deaths, K/D Ratio
+- 🔥 **Killstreaks** with automatic announcements
+- 🏆 **Top 10 Leaderboards** (Kills, K/D, Killstreaks)
+- 💾 **Automatic Saving** every 5 minutes
+- 🎨 **Colorful** and professional interface
+- 📈 **Overall Server Statistics**
 
-## 🎮 Commandes
+## 🎮 Commands
 
-| Commande | Description |
+| Command | Description |
+
 |----------|-------------|
-| `/stats` | Affiche vos statistiques PvP complètes |
-| `/top [kills\|kd\|ks]` | Affiche le classement des meilleurs joueurs |
-| `/killstreak` | Affiche votre série de kills en cours |
-| `/resetstats --confirm` | Réinitialise toutes vos statistiques |
-| `/betterpvp` | Informations sur le plugin et stats globales |
 
-## 🔥 Système de Killstreaks
+| `/stats` | Displays your complete PvP statistics |
 
-- **3 kills** : "En série !"
-- **5 kills** : "Domine !" 
-- **10 kills** : "UNSTOPPABLE !"
-- **15 kills** : "LÉGENDAIRE !"
-- **20 kills** : "GODLIKE !"
+| `/top [kills|kd|ks]` | Displays the leaderboard of top players |
+
+| `/killstreak` | Displays your current killstreak |
+
+| `/resetstats --confirm` | Resets all your stats |
+
+| `/betterpvp` | Plugin information and overall stats |
+
+## 🔥 Killstreak System
+
+- **3 kills**: "Streak!"
+
+- **5 kills**: "Dominates!"
+
+- **10 kills**: "UNSTOPPABLE!"
+
+- **15 kills**: "LEGENDARY!"
+
+- **20 kills**: "GODLIKE!"
 
 ## 📦 Installation
 
-### Prérequis
+### Prerequisites
 - Java 25 JDK
-- IntelliJ IDEA (ou autre IDE)
+- IntelliJ IDEA (or other IDE)
 - Hytale Early Access
 
 ### Compilation
 ```bash
-git clone https://github.com/VOTRE-USERNAME/BetterPvP-Hytale.git
+git clone https://github.com/YOUR-USERNAME/BetterPvP-Hytale.git
 cd BetterPvP-Hytale
 ./gradlew shadowJar
 ```
 
-Le fichier `.jar` sera généré dans `build/libs/BetterPvP-1.0.0.jar`
+The `.jar` file will be generated in `build/libs/BetterPvP-1.0.0.jar`
 
-### Installation sur le serveur
+### Server Installation
 
-1. Copiez `BetterPvP-1.0.0.jar` dans le dossier mods de Hytale :
+1. Copy `BetterPvP-1.0.0.jar` to the Hytale mods folder:
 ```
-   %AppData%/Roaming/Hytale/UserData/Mods/
+%AppData%/Roaming/Hytale/UserData/Mods/
 ```
-2. Redémarrez votre serveur Hytale
-3. Vérifiez les logs pour confirmer le chargement
+2. Restart your Hytale server
+3. Check the logs to confirm the installation
 
-## ⚠️ Note Importante
+## ⚠️ Note Important
 
-**Hytale est en Early Access.** L'API officielle n'est pas encore complètement disponible. 
+**Hytale is in Early Access.** The official API is not yet fully available.
 
-Ce plugin utilise des noms de classes et méthodes basés sur la structure typique des APIs de serveur de jeux. Une fois l'API Hytale officiellement publiée (prévue mars 2026), les imports devront être mis à jour.
+This plugin uses class and method names based on the typical structure of game server APIs. Once the Hytale API is officially released (expected in March 2026), imports will need to be updated.
 
-## 🛠️ Structure du Projet
+## 🛠️ Project Structure
 ```
 BetterPvP/
 ├── src/main/java/fr/betterpvp/
-│   ├── BetterPvPPlugin.java          # Classe principale
-│   ├── commands/                      # Toutes les commandes
-│   │   ├── StatsCommand.java
-│   │   ├── TopCommand.java
-│   │   ├── ResetStatsCommand.java
-│   │   ├── KillstreakCommand.java
-│   │   └── BetterPvPCommand.java
-│   ├── data/                          # Gestion des données
-│   │   ├── PlayerStats.java
-│   │   └── PlayerStatsManager.java
-│   └── listeners/                     # Écouteurs d'événements
-│       ├── CombatListener.java
-│       ├── JoinListener.java
-│       └── QuitListener.java
-├── manifest.json                      # Métadonnées du plugin
-├── build.gradle                       # Configuration Gradle
+│ ├── BetterPvPPlugin.java # Main Class
+│ ├── commands/ # All Commands
+│ │ ├── StatsCommand.java
+│ │ ├── TopCommand.java
+│ │ ├── ResetStatsCommand.java
+│ │ ├── KillstreakCommand.java
+│ │ └── BetterPvPCommand.java
+│ ├── data/ # Data Management
+│ │ ├── PlayerStats.java
+│ │ └── PlayerStatsManager.java
+│ └── listeners/ # Event Listeners
+│ ├── CombatListener.java
+│ ├── JoinListener.java
+│ └── QuitListener.java
+├── manifest.json # Plugin Metadata
+├── build.gradle # Gradle Configuration
 └── settings.gradle
 ```
 
 ## 📝 Contribution
 
-Les contributions sont les bienvenues ! N'hésitez pas à :
+Contributions are welcome! Feel free to:
 
-1. Fork le projet
-2. Créer une branche (`git checkout -b feature/AmazingFeature`)
-3. Commit vos changements (`git commit -m 'Add AmazingFeature'`)
-4. Push vers la branche (`git push origin feature/AmazingFeature`)
-5. Ouvrir une Pull Request
+1. Fork the project
+2. Create a branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## 📄 Licence
+## 📄 License
 
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## 🔗 Liens Utiles
+## 🔗 Useful Links
 
-- [Documentation Hytale](https://hytale.com)
-- [Discord Hytale](https://discord.gg/hytale)
-- [Documentation Modding Communautaire](https://britakee-studios.gitbook.io/hytale-modding-documentation)
+- [Hytale Documentation](https://hytale.com)
+
+- [Hytale Discord](https://discord.gg/hytale)
+
+- [Community Modding Documentation](https://britakee-studios.gitbook.io/hytale-modding-documentation)
 
 ## 💬 Support
 
-Pour toute question ou problème :
-- Ouvrez une [Issue](https://github.com/VOTRE-USERNAME/BetterPvP-Hytale/issues)
-- Rejoignez le Discord Hytale pour obtenir de l'aide
+For any questions or issues:
+
+- Open an [Issue](https://github.com/YOUR-USERNAME/BetterPvP-Hytale/issues)
+- Join the Hytale Discord for help
 
 ---
 
-**Créé avec ❤️ pour la communauté Hytale**
+**Created with ❤️ for the Hytale community**
